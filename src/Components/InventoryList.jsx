@@ -1,8 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
-const InventoryList = ({ items, onItemSelect, onDelete }) => {
+const InventoryList = ({ items, onDelete }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="p-6 bg-white shadow-md rounded-lg max-w-3xl mx-auto">
       <h2 className="text-3xl font-semibold text-gray-800 mb-6">Daftar Barang</h2>
@@ -11,7 +14,7 @@ const InventoryList = ({ items, onItemSelect, onDelete }) => {
           <li
             key={index}
             className="relative p-4 bg-gray-100 rounded-md shadow hover:bg-gray-200 cursor-pointer transition-transform transform hover:scale-105"
-            onClick={() => onItemSelect(item)}
+            onClick={() => navigate(`/item-detail/${item.id}`)} 
           >
             <div className="text-lg font-semibold text-gray-800">{item.name}</div>
             <div className="text-gray-600">Kategori: {item.category}</div>

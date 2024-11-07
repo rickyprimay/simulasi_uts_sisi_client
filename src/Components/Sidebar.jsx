@@ -1,45 +1,51 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faBoxOpen, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = () => {
   return (
-    <div className="w-64 h-full bg-gray-800 text-white">
-      <nav className="p-4">
-        <h2 className="text-2xl font-bold mb-6 text-center">Menu</h2>
+    <div className="w-64 h-full bg-blue-100 text-gray-700">
+      <nav className="p-6">
+        <div className="text-blue-800 font-semibold text-lg mb-10">Manajemen Barang</div>
+        
         <ul className="space-y-4">
           <li>
-            <NavLink 
-              to="/" 
+            <NavLink
+              to="/"
               className={({ isActive }) =>
-                isActive 
-                  ? "block px-4 py-2 bg-blue-600 rounded-md text-white font-semibold" 
-                  : "block px-4 py-2 rounded-md text-gray-300 hover:bg-blue-500 hover:text-white transition"
+                isActive
+                  ? "flex items-center px-4 py-2 bg-blue-200 rounded-md text-blue-800 font-semibold"
+                  : "flex items-center px-4 py-2 rounded-md text-gray-600 hover:bg-blue-200 hover:text-blue-800 transition"
               }
             >
+              <FontAwesomeIcon icon={faHome} className="mr-2" />
               Dashboard
             </NavLink>
           </li>
           <li>
-            <NavLink 
-              to="/inventory" 
+            <NavLink
+              to="/inventory"
               className={({ isActive }) =>
-                isActive 
-                  ? "block px-4 py-2 bg-blue-600 rounded-md text-white font-semibold" 
-                  : "block px-4 py-2 rounded-md text-gray-300 hover:bg-blue-500 hover:text-white transition"
+                isActive
+                  ? "flex items-center px-4 py-2 bg-blue-200 rounded-md text-blue-800 font-semibold"
+                  : "flex items-center px-4 py-2 rounded-md text-gray-600 hover:bg-blue-200 hover:text-blue-800 transition"
               }
             >
+              <FontAwesomeIcon icon={faBoxOpen} className="mr-2" />
               List Barang
             </NavLink>
           </li>
           <li>
-            <NavLink 
-              to="/add-item" 
+            <NavLink
+              to="/add-item"
               className={({ isActive }) =>
-                isActive 
-                  ? "block px-4 py-2 bg-blue-600 rounded-md text-white font-semibold" 
-                  : "block px-4 py-2 rounded-md text-gray-300 hover:bg-blue-500 hover:text-white transition"
+                isActive
+                  ? "flex items-center px-4 py-2 bg-blue-200 rounded-md text-blue-800 font-semibold"
+                  : "flex items-center px-4 py-2 rounded-md text-gray-600 hover:bg-blue-200 hover:text-blue-800 transition"
               }
             >
+              <FontAwesomeIcon icon={faPlusSquare} className="mr-2" />
               Tambah Barang
             </NavLink>
           </li>

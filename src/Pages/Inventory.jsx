@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import InventoryList from '../Components/InventoryList';
-import ItemDetail from '../Components/ItemDetail';
+import ItemDetailPage from './ItemDetailPage';
 
 const Inventory = ({ items, onDelete }) => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -13,7 +13,7 @@ const Inventory = ({ items, onDelete }) => {
 
       {selectedItem && (
         <div className="flex-1">
-          <ItemDetail item={selectedItem} />
+          <ItemDetailPage item={selectedItem} />
         </div>
       )}
     </div>
